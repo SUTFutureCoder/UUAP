@@ -32,7 +32,7 @@ class MLog{
 
         $tempObjCoreConst = self::$objCoreConst;
 
-        if (0 === $tempObjCoreConst::MNEMOSYNE_LOG){
+        if (0 === $tempObjCoreConst::LOG_SWITCH){
             return false;
         }
 
@@ -122,7 +122,7 @@ class MLog{
             );
         }
 
-        $strLog = sprintf("%s: %s [%s:%s] args[%s] logId[%s] uri[%s] userId[%s] %s" . PHP_EOL ,
+        $strLog = sprintf("%s: %s [%s:%s] args[%s] logId[%s] uri[%s] %s" . PHP_EOL ,
             $strLogType,
             date('y-m-d H:i:s'),
             $logBackTrace['file'],
@@ -130,7 +130,6 @@ class MLog{
             $logBackTrace['args'],
             self::$intLogUuid,
             $_SERVER['PATH_INFO'],
-            CoreConst::$userId,
             $strLogMsg);
 
         file_put_contents($strLogPath, $strLog, FILE_APPEND);
