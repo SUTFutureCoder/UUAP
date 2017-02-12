@@ -22,14 +22,7 @@ class Regist extends BASE_Controller {
         $arrInput = [];
         $this->checkParam($arrInput);
 
-        throw new MException('hello world', 100, null);
+//        throw new MException('hello world', 100, null);
         return $this->input->get('hello');
     }
-    public function register(){
-        //
-        //
-        $this->index();
-//        echo $this->input->get('hello');
-    }
-
 }

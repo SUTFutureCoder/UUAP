@@ -45,9 +45,11 @@ class ErrorCodes {
     //上传部分
     const ERROR_UPLOAD_STRING_MIME_MISSING = 20001;
 
-
     //消息部分
     const ERROR_MESSAGE_UPDATE_STATUS = 30005;
+
+    //第三方部分
+    const ERROR_THIRD_BDVOICE_ERROR = 40001;
 
     public static $error_codes = array(
         self::ERROR_PARAM_ERROR     => 'param error',
@@ -84,6 +86,9 @@ class ErrorCodes {
 
         //消息部分
         self::ERROR_MESSAGE_UPDATE_STATUS => 'upate message status error',
+
+        //第三方部分
+        self::ERROR_THIRD_BDVOICE_ERROR   => 'bd voice error',
     );
 
     /**

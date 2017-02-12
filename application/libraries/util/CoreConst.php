@@ -38,7 +38,8 @@ class CoreConst{
     const MODULE_SAL     = 'SAL';
     const MODULE_EMAIL   = 'EMAIL';
     const MODULE_BOS     = 'BOS';
-    conSt MODULE_MESSAGE = 'message';
+    const MODULE_MESSAGE = 'message';
+    const MODULE_THIRD_BDVOICE = 'BdVoice';
 
     public static $moduleList = array(
         self::MODULE_ACCOUNT,
@@ -49,10 +50,15 @@ class CoreConst{
         self::MODULE_EMAIL,
         self::MODULE_BOS,
         self::MODULE_MESSAGE,
+        self::MODULE_THIRD_BDVOICE,
     );
 
     //log是否打开
 //    const LOG_SWITCH = 0;
     const LOG_SWITCH  = 1;
+
+    //验证码session名称
+    const SESSION_IMG_CAPTCHA   = 'session_img_captcha';
+    const SESSION_VOICE_CAPTCHA = 'session_voice_captcha';
 
 }

@@ -31,14 +31,10 @@ abstract class BASE_Controller extends CI_Controller {
             $arrInput = [];
             $this->checkParam($arrInput);
             $ret = $this->myIndex();
-            echo json_encode([
-                'error_no'  => 0,
-                'error_msg' => '',
-                'result'    => $ret,
-            ]);
+            $this->load->library('util/Response');
+            $this->response->jsonSuccess($ret);
         } catch (Exception $e){
             //标准化输出
-            echo class_exists('BASE_Exception');
             throw new MException($e->getMessage(), $e->getCode(), null);
         }
     }

@@ -114,8 +114,8 @@ class Response{
     public function json($status, $description, $data = null){
         header(self::HEADER_CONTENT_TYPE_JSON);
         $retArr = array(
-            'status'        => $status,
-            'description'   => $description,
+            'error_no'    => $status,
+            'error_msg'   => $description,
         );
 
         $data === null || $retArr['data'] = $data;
