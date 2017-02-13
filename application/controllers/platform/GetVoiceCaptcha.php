@@ -23,8 +23,8 @@ class GetVoiceCaptcha extends BASE_Controller {
         //生成随机码,并保存到session中
         $this->load->library('session');
 
-        $tmpCode = $this->getCode();
-        $strCode = str_replace('', '#', $tmpCode);
+        $tmpCode = $this->getNumCode();
+        $strCode = str_replace('', '。', $tmpCode);
 
         $this->session->set_userdata(CoreConst::SESSION_VOICE_CAPTCHA, $tmpCode);
 
@@ -46,6 +46,7 @@ class GetVoiceCaptcha extends BASE_Controller {
      * @return string
      */
     private function getCode(){
+        //这个需要解决连读问题
         $charset = 'abcdefghkmnprstuvwxyzABCDEFGHKMNPRSTUVWXYZ23456789';//随机因子
         $codelen = 4;//验证码长度
         $_len    = strlen($charset) - 1;
@@ -56,4 +57,19 @@ class GetVoiceCaptcha extends BASE_Controller {
         return $code;
     }
 
+    /**
+     * 获取数字随机码
+     *
+     * @return string
+     */
+    private function getNumCode(){
+        $charset = '0123456789';//随机因子
+        $codelen = 4;//验证码长度
+        $_len    = strlen($charset) - 1;
+        $code    = '';
+        for ($i  = 0; $i < $codelen; $i++) {
+            $code .= $charset[mt_rand(0, $_len)];
+        }
+        return $code;
+    }
 }
