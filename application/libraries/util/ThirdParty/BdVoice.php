@@ -32,7 +32,7 @@ class BdVoice {
             "tok"   => $this->getAccessToken(),
             'ctp'   => 1,
             "cuid"  => 'qwertyuiopiuytsa123',
-            "spd"   => 3,
+            "spd"   => 1,
             "vol"   => 9,
         );
 

@@ -22,18 +22,38 @@ class GetVoiceCaptcha extends BASE_Controller {
     {
         //生成随机码,并保存到session中
         $this->load->library('session');
-        $captcha = '3 D W W';
-        $this->session->set_userdata(CoreConst::SESSION_VOICE_CAPTCHA, $captcha);
 
+        $tmpCode = $this->getCode();
+        $strCode = str_replace('', '#', $tmpCode);
+
+        $this->session->set_userdata(CoreConst::SESSION_VOICE_CAPTCHA, $tmpCode);
 
         //声音验证码
         //声音验证码和图形验证码对上一个即可
         //注意调用时务必加上随机码，否则会走缓存
         //例如 http://localhost/UUAP/index.php/platform/GetVoiceCaptcha?state=test123
         $this->load->library('util/ThirdParty/BdVoice');
+        header("Expires: Mon, 26 Jul 1970 05:00:00 GMT");
         header("content-type:audio/mp3;charset=utf-8");
-        $captcha = $this->bdvoice->textToVoice($captcha);
+        $captcha = $this->bdvoice->textToVoice($strCode);
         echo $captcha;
+        exit;
+    }
+
+    /**
+     * 获取随机码
+     *
+     * @return string
+     */
+    private function getCode(){
+        $charset = 'abcdefghkmnprstuvwxyzABCDEFGHKMNPRSTUVWXYZ23456789';//随机因子
+        $codelen = 4;//验证码长度
+        $_len    = strlen($charset) - 1;
+        $code    = '';
+        for ($i  = 0; $i < $codelen; $i++) {
+            $code .= $charset[mt_rand(0, $_len)];
+        }
+        return $code;
     }
 
 }
