@@ -18,7 +18,7 @@ class Regist extends BASE_Controller {
 
     }
 
-    protected function myIndex(){
+    protected function myIndex($arrInput){
         $arrInput = [];
         $this->checkParam($arrInput);
 

@@ -18,7 +18,7 @@ class GetVoiceCaptcha extends BASE_Controller {
         // TODO: Implement checkParam() method.
     }
 
-    public function myIndex()
+    public function myIndex($arrInput)
     {
         //生成随机码,并保存到session中
         $this->load->library('session');

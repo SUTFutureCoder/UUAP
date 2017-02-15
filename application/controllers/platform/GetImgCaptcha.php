@@ -19,7 +19,7 @@ class GetImgCaptcha extends BASE_Controller {
         // TODO: Implement checkParam() method.
     }
 
-    public function myIndex()
+    public function myIndex($arrInput)
     {
         $this->load->library('util/ValidateCode');
         echo $this->validatecode->doimg();
