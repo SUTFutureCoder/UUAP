@@ -50,6 +50,7 @@ class ErrorCodes {
 
     //第三方部分
     const ERROR_THIRD_BDVOICE_ERROR = 40001;
+    const ERROR_THIRD_ALISMS_ERROR  = 40002;
 
     public static $error_codes = array(
         self::ERROR_PARAM_ERROR     => 'param error',
@@ -89,6 +90,8 @@ class ErrorCodes {
 
         //第三方部分
         self::ERROR_THIRD_BDVOICE_ERROR   => 'bd voice error',
+        self::ERROR_THIRD_ALISMS_ERROR    => 'ali sms error',
+
     );
 
     /**
