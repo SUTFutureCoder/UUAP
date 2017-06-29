@@ -22,16 +22,19 @@ class SendPhoneCaptcha extends BASE_Controller {
 
     protected function myIndex($arrInput)
     {
-        $this->load->library('util/Sms');
-        $templateCode = 'SMS_71350740';
-        if ($this->sms->run($arrInput['reg_phone'], $templateCode, [
-            'number' => '123456',
-            'namea'  => '门神',
-            'time'   => '1024',
-            'nameb'  => '门神',
-        ])) {
-
-        }
+        $this->load->library('session');
+        var_dump($arrInput);
+        var_dump($this->session->userdata());
+//        $this->load->library('util/Sms');
+//        $templateCode = 'SMS_71350740';
+//        if ($this->sms->run($arrInput['reg_phone'], $templateCode, [
+//            'number' => '123456',
+//            'namea'  => '门神',
+//            'time'   => '1024',
+//            'nameb'  => '门神',
+//        ])) {
+//
+//        }
     }
 
 }
