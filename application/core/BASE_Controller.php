@@ -16,6 +16,7 @@ abstract class BASE_Controller extends CI_Controller {
 
         //载入类 尽可能不要污染autoload和config
         $this->load->library('util/CoreConst');
+        $this->load->library('ProjectConst');
         $this->load->library('util/ErrorCodes');
         $this->load->library('util/MLog');
         $this->load->library('util/MException');

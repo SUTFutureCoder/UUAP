@@ -22,7 +22,5 @@ class Login extends BASE_Controller {
     public function myIndex($arrInput)
     {
         $this->load->library('session');
-        print_r($this->session->userdata());
-        print_r($arrInput);
     }
 }

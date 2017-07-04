@@ -48,7 +48,7 @@ class ValidateCode {
   }
  }
  //输出
- private function outPut() {
+ public function outPut() {
   header('Content-type:image/png');
   imagepng($this->img);
   imagedestroy($this->img);
@@ -59,7 +59,6 @@ class ValidateCode {
   $this->createCode();
   $this->createLine();
   $this->createFont();
-  $this->outPut();
  }
  //获取验证码
  public function getCode() {

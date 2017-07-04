@@ -7,7 +7,7 @@
  * Date: 17-6-19
  * Time: 上午8:48
  */
-require_once APPPATH . '/third_party/ali_php_sdk/mns-autoloader.php';
+require_once APPPATH . 'third_party/ali_php_sdk/mns-autoloader.php';
 use AliyunMNS\Client;
 use AliyunMNS\Topic;
 use AliyunMNS\Constants;

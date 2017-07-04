@@ -59,8 +59,4 @@ class CoreConst{
 //    const LOG_SWITCH = 0;
     const LOG_SWITCH  = 1;
 
-    //验证码session名称
-    const SESSION_IMG_CAPTCHA   = 'session_img_captcha';
-    const SESSION_VOICE_CAPTCHA = 'session_voice_captcha';
-
 }
