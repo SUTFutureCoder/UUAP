@@ -10,7 +10,7 @@
 class RedisLib{
     private static $redis;
 
-    public static $prefix = 'Mne:';
+    public static $prefix = 'Project256:';
 
     public function __construct(){
         //禁止new

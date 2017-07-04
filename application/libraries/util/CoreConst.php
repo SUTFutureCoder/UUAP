@@ -15,20 +15,20 @@ class CoreConst{
     const PLATFORM_PC       = 2;
     const PLATFORM_MOBILE   = 3;
 
-    public static $platform = array(
+    public static $platform = [
         self::PLATFORM_TEST,
         self::PLATFORM_ADMIN,
         self::PLATFORM_PC,
         self::PLATFORM_MOBILE,
-    );
+    ];
 
     //UUID
     const LOG_UUID    = 'uuid:log';
     const USER_UUID   = 'uuid:user';
-    public static $uuid = array(
+    public static $uuid = [
         self::LOG_UUID,
         self::USER_UUID,
-    );
+    ];
 
     //模块列表，用于打LOG等
     const MODULE_KERNEL  = 'kernel';
@@ -38,9 +38,11 @@ class CoreConst{
     const MODULE_SAL     = 'SAL';
     const MODULE_EMAIL   = 'EMAIL';
     const MODULE_BOS     = 'BOS';
-    conSt MODULE_MESSAGE = 'message';
+    const MODULE_MESSAGE = 'message';
+    const MODULE_THIRD_BDVOICE = 'BdVoice';
+    const MODULE_THIRD_ALISMS  = 'ALISMS';
 
-    public static $moduleList = array(
+    public static $moduleList = [
         self::MODULE_ACCOUNT,
         self::MODULE_KERNEL,
         self::MODULE_DATABASE,
@@ -49,7 +51,9 @@ class CoreConst{
         self::MODULE_EMAIL,
         self::MODULE_BOS,
         self::MODULE_MESSAGE,
-    );
+        self::MODULE_THIRD_BDVOICE,
+        self::MODULE_THIRD_ALISMS,
+    ];
 
     //log是否打开
 //    const LOG_SWITCH = 0;
