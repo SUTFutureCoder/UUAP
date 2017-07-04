@@ -42,15 +42,19 @@ class ErrorCodes {
     const ERROR_BOS_STRING_DATA_NOT_VALID  = 10008;
     const ERROR_BOS_STRING_MIME_NOT_VALID  = 10009;
 
+    //账号体系
+    const ERROR_ACCOUNT_CAPTCHA_ERROR = 20001;
+    const ERROR_ACCOUNT_PHONE_SEND_CAPTCHA_FAIL = 20002;
+
     //上传部分
-    const ERROR_UPLOAD_STRING_MIME_MISSING = 20001;
+    const ERROR_UPLOAD_STRING_MIME_MISSING = 30001;
 
     //消息部分
-    const ERROR_MESSAGE_UPDATE_STATUS = 30005;
+    const ERROR_MESSAGE_UPDATE_STATUS = 40005;
 
     //第三方部分
-    const ERROR_THIRD_BDVOICE_ERROR = 40001;
-    const ERROR_THIRD_ALISMS_ERROR  = 40002;
+    const ERROR_THIRD_BDVOICE_ERROR = 50001;
+    const ERROR_THIRD_ALISMS_ERROR  = 50002;
 
     public static $error_codes = array(
         self::ERROR_PARAM_ERROR     => 'param error',
@@ -81,6 +85,9 @@ class ErrorCodes {
         self::ERROR_BOS_STRING_DATA_NOT_VALID  => 'string data not valid',
         self::ERROR_BOS_STRING_MIME_NOT_VALID  => 'string mime not valid please check base64 string',
 
+        //账号体系
+        self::ERROR_ACCOUNT_CAPTCHA_ERROR => '请输入正确验证码',
+        self::ERROR_ACCOUNT_PHONE_SEND_CAPTCHA_FAIL => '发送手机验证码失败',
 
         //上传部分
         self::ERROR_UPLOAD_STRING_MIME_MISSING => 'upload base64 mime type missing',

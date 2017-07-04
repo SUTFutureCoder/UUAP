@@ -23,10 +23,8 @@ class GetImgCaptcha extends BASE_Controller {
     {
         $this->load->library('util/ValidateCode');
         echo $this->validatecode->doimg();
-
         $strCode = $this->validatecode->getCode();
         $this->load->library('session');
-
         $this->session->set_userdata(CoreConst::SESSION_IMG_CAPTCHA, $strCode);
     }
 
