@@ -21,6 +21,7 @@ class Login extends BASE_Controller {
 
     public function myIndex($arrInput)
     {
-        $this->load->library('session');
+        $this->load->library('OauthServer');
+        $this->oauthserver->passwordCredentials();
     }
 }

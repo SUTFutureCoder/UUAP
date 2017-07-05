@@ -24,7 +24,7 @@ class SendPhoneCaptcha extends BASE_Controller {
     protected function myIndex($arrInput)
     {
         $this->load->library('session');
-        $this->load->library('util/random');
+        $this->load->library('util/Random');
         $this->load->library('util/RedisLib');
 
         //检查验证码
