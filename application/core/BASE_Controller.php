@@ -33,7 +33,7 @@ abstract class BASE_Controller extends CI_Controller {
         header("ACCESS-CONTROL-ALLOW-ORIGIN: http://localhost:8080");
         header("Access-Control-Allow-Credentials:true");
 
-        try {
+//        try {
             //模糊化get post
             $arrInput = $this->input->get(null, true) + $this->input->post(null, true);
             $this->checkParam($arrInput);
@@ -43,10 +43,10 @@ abstract class BASE_Controller extends CI_Controller {
             }
             $ret = $this->myIndex($arrInput);
             $this->response->jsonSuccess($ret);
-        } catch (Exception $e){
+//        } catch (Exception $e){
             //标准化输出
-            throw new MException($e->getMessage(), $e->getCode(), null);
-        }
+//            throw new MException($e->getMessage(), $e->getCode(), null);
+//        }
     }
 
 }

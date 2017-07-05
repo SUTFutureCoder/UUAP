@@ -114,7 +114,7 @@ class ErrorCodes {
      */
     public static function errMsg($errno){
         if (!isset(self::$error_codes[$errno]) || empty(self::$error_codes[$errno])){
-            $errMsg = 'Errno msg not found. errno.:' . $errno;
+            return 'Errno msg not found. errno.:' . $errno;
         }
 
         return self::$error_codes[$errno];
