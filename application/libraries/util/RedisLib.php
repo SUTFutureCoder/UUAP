@@ -118,4 +118,9 @@ class RedisLib{
         self::getInstance();
         return self::$redis->sMembers($strKey);
     }
+
+    public static function expire($strKey, $int){
+        self::getInstance();
+        return self::$redis->expire($strKey, $int);
+    }
 }

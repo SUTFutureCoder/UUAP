@@ -30,6 +30,11 @@ class CoreConst{
         self::USER_UUID,
     ];
 
+    //状态
+    const STATUS_INVALID    = 0;
+    const STATUS_VALID      = 1;
+    const STATUS_FREEZE     = 2;
+
     //模块列表，用于打LOG等
     const MODULE_KERNEL  = 'kernel';
     const MODULE_ACCOUNT = 'account';

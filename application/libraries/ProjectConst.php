@@ -12,6 +12,8 @@ class ProjectConst {
     //验证码session名称
     const SESSION_IMG_CAPTCHA   = 'session_img_captcha';
     const SESSION_VOICE_CAPTCHA = 'session_voice_captcha';
+    const SESSION_USER_ID       = 'session_user_id';
+    const SESSION_USER_NAME     = 'session_user_name';
 
     //REDIS相关
     //手机验证码系列

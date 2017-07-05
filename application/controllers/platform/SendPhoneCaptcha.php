@@ -28,7 +28,7 @@ class SendPhoneCaptcha extends BASE_Controller {
         $this->load->library('util/RedisLib');
 
         //检查验证码
-        if (!in_array($arrInput['reg_captcha'], [
+        if (!in_array(strtolower($arrInput['reg_captcha']), [
             $this->session->userdata(ProjectConst::SESSION_IMG_CAPTCHA),
             $this->session->userdata(ProjectConst::SESSION_VOICE_CAPTCHA),
         ])) {
@@ -42,8 +42,8 @@ class SendPhoneCaptcha extends BASE_Controller {
         }
 
         //expire存入redis
-        $expireTime = 900;
-        $userPhoneCaptcha = $this->random->createRandomBytes(4);
+        $expireTime = 99999900;
+        $userPhoneCaptcha = strtolower($this->random->createRandomBytes(4));
 
         $this->load->library('util/Sms');
         $templateCode = 'SMS_71350740';
@@ -63,6 +63,11 @@ class SendPhoneCaptcha extends BASE_Controller {
         }
 
         //自增限制
+        $phoneGetTimes = RedisLib::get(sprintf(ProjectConst::REDIS_PHONE_CAPTCHA_PHONE_TIME_LIMIT, $arrInput['reg_phone']));
+        if (empty($phoneGetTimes)) {
+            //设定过期时间
+            RedisLib::expire(sprintf(ProjectConst::REDIS_PHONE_CAPTCHA_PHONE_TIME_LIMIT, $arrInput['reg_phone']), 86400);
+        }
         $ret = RedisLib::incr(sprintf(ProjectConst::REDIS_PHONE_CAPTCHA_PHONE_TIME_LIMIT, $arrInput['reg_phone']));
         if ($ret === false) {
             throw new MException(CoreConst::MODULE_KERNEL, ErrorCodes::ERROR_REDIS);

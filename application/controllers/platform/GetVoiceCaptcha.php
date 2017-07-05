@@ -26,7 +26,7 @@ class GetVoiceCaptcha extends BASE_Controller {
         $tmpCode = $this->getNumCode();
         $strCode = str_replace('', '。', $tmpCode);
 
-        $this->session->set_userdata(ProjectConst::SESSION_VOICE_CAPTCHA, $tmpCode);
+        $this->session->set_userdata(ProjectConst::SESSION_VOICE_CAPTCHA, strtolower($tmpCode));
 
         //声音验证码
         //声音验证码和图形验证码对上一个即可
