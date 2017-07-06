@@ -48,6 +48,7 @@ class ErrorCodes {
     const ERROR_ACCOUNT_PHONE_TIME_EXCEED = 20003;
     const ERROR_ACCOUNT_PHONE_WRONG = 20004;
     const ERROR_ACCOUNT_PASSWORD_ENCRYPT_FAIL = 20005;
+    const ERROR_ACCOUNT_PHONE_EMAIL_NOT_UNIQUE = 20006;
 
 
     //上传部分
@@ -95,6 +96,7 @@ class ErrorCodes {
         self::ERROR_ACCOUNT_PHONE_TIME_EXCEED => '超过短信发送次数限制',
         self::ERROR_ACCOUNT_PHONE_WRONG => '短信验证码错误',
         self::ERROR_ACCOUNT_PASSWORD_ENCRYPT_FAIL  => '密码加密错误',
+        self::ERROR_ACCOUNT_PHONE_EMAIL_NOT_UNIQUE => '手机号或邮箱已注册',
 
         //上传部分
         self::ERROR_UPLOAD_STRING_MIME_MISSING => 'upload base64 mime type missing',

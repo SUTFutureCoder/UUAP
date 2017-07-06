@@ -33,7 +33,11 @@ class Regist extends BASE_Controller {
             $this->response->jsonFail(ErrorCodes::ERROR_ACCOUNT_PHONE_WRONG, ErrorCodes::$error_codes[ErrorCodes::ERROR_ACCOUNT_PHONE_WRONG]);
         }
 
-        //检查是否已经存在
+        //检查手机及邮箱是否已经存在
+        $this->load->model('UsersModel');
+        if ($this->UsersModel->checkPhoneAndEMailUnique($arrInput['reg_phone'], $arrInput['reg_email'])){
+            $this->response->jsonFail(ErrorCodes::ERROR_ACCOUNT_PHONE_EMAIL_NOT_UNIQUE, ErrorCodes::$error_codes[ErrorCodes::ERROR_ACCOUNT_PHONE_EMAIL_NOT_UNIQUE]);
+        }
 
         //准备数据
         $arrInput['reg_user_id'] = Uuid::genUUID(CoreConst::USER_UUID);
@@ -45,7 +49,6 @@ class Regist extends BASE_Controller {
         $arrInput['reg_hash_password'] = $encryptedPassword;
 
         //插入数据库
-        $this->load->model('UsersModel');
         if (false === $this->UsersModel->addUser($arrInput)){
             throw new MException(CoreConst::MODULE_DATABASE, ErrorCodes::ERROR_DB_INSERT);
         }

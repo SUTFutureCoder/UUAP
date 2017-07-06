@@ -42,4 +42,23 @@ class UsersModel extends CI_Model {
         );
     }
 
+    /**
+     * 检查手机号和邮箱是否唯一
+     *
+     * @param null $strPhone
+     * @param null $strEMail
+     * @return mixed
+     */
+    public function checkPhoneAndEMailUnique($strPhone = null, $strEMail = null){
+        if (null != $strPhone){
+            $this->db->or_where('user_phone =', $strPhone);
+        }
+
+        if (null != $strEMail){
+            $this->db->or_where('user_email =', $strEMail);
+        }
+
+        return $this->db->count_all_results(self::TABLE_NAME);
+    }
+
 }
