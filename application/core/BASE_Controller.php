@@ -45,7 +45,7 @@ abstract class BASE_Controller extends CI_Controller {
             $this->response->jsonSuccess($ret);
         } catch (Exception $e){
             //标准化输出
-            throw new MException($e->getMessage(), $e->getCode(), null);
+            throw new MException(CoreConst::MODULE_KERNEL, $e->getCode(), null, $e->getMessage());
         }
     }
 

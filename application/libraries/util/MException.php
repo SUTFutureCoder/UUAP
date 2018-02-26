@@ -38,6 +38,10 @@ class MException extends Exception {
             return false;
         }
 
+        if (0 === $errno) {
+            $errno = -1;
+        }
+
         $this->ci    =& get_instance();
 
         $this->level = $level;

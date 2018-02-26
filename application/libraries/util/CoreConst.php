@@ -36,6 +36,7 @@ class CoreConst{
     const STATUS_FREEZE     = 2;
 
     //模块列表，用于打LOG等
+    const MODULE_DEFAULT = 'default';
     const MODULE_KERNEL  = 'kernel';
     const MODULE_ACCOUNT = 'account';
     const MODULE_DATABASE  = 'database';
